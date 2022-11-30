@@ -1,0 +1,33 @@
+Method 3:Common elements
+
+
+class Solution
+{
+    ArrayList<Integer> commonElements(int A[], int B[], int C[], int n1, int n2, int n3) 
+    {
+        // code here 
+
+        HashSet<Integer> al1=new HashSet<Integer>();
+        HashSet<Integer> al2=new HashSet<Integer>();
+        HashSet<Integer> al3=new HashSet<Integer>();
+        
+        for(int i=0;i<n1;i++){
+            al1.add(A[i]);
+        }
+        
+        for(int i=0;i<n2;i++){
+            al2.add(B[i]);
+        }
+        
+        for(int i=0;i<n3;i++){
+            al3.add(C[i]);
+        }
+        
+      al1.retainAll(al2);
+      al1.retainAll(al3);
+      
+      ArrayList<Integer> al=new ArrayList<Integer>(al1);
+      Collections.sort(al);
+        return al;
+    }
+}
