@@ -1,0 +1,26 @@
+Method 1:Move all negative elements to end
+
+
+class Solution {
+    
+    public void segregateElements(int arr[], int n)
+    {
+        // Your code goes here 
+        List<Integer> li=new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(arr[i]>=0){
+                li.add(arr[i]);
+            }
+        }
+        
+        for(int i=0;i<n;i++){
+            if(arr[i]<0){
+                li.add(arr[i]);
+            }
+        }
+        
+        for(int i=0;i<li.size();i++){
+            arr[i]=li.get(i);
+        }
+    }
+}
