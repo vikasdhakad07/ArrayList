@@ -1,0 +1,28 @@
+Method 1:Non Repeating Numbers
+
+
+class Solution
+{
+    public int[] singleNumber(int[] nums)
+    {
+        // Code here
+        int ans[]=new int[2];
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(Integer x: nums){
+            hm.put(x,hm.getOrDefault(x,0)+1);
+        }
+        int count=0;
+        for(Integer e: hm.keySet()) {
+
+            if(hm.get(e)==1) {
+
+                ans[count++]=e;
+
+            }
+
+        }
+        
+        Arrays.sort(ans);
+        return ans;
+    }
+}
